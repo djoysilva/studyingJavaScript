@@ -1,11 +1,9 @@
 var elementos = document.getElementsByClassName("paciente"); //array com todas as informações de pacientes
 
-for(var i = 0; i < elementos.length; i++){
-    pacienteTr= elementos[i];
-
-    var nome = elementos[i].getElementsByClassName("info-nome")[0];
-    var peso = elementos[i].getElementsByClassName("info-peso")[0];
-    var altura = elementos[i].getElementsByClassName("info-altura")[0];
+percorreArray(elementos, function(paciente){
+    var nome = paciente.getElementsByClassName("info-nome")[0];
+    var peso = paciente.getElementsByClassName("info-peso")[0];
+    var altura = paciente.getElementsByClassName("info-altura")[0];
 
     var pacienteAtual = {
         nome : nome.textContent,
@@ -21,5 +19,5 @@ for(var i = 0; i < elementos.length; i++){
     };
 
     console.log(pacienteAtual.nome);
-
 }
+);
